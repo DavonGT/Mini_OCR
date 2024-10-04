@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Detection and OCR</title>
+</head>
+<body>
+    <h1>Printer Detection</h1>
+
+    <!-- Button to check if a printer is connected -->
+    <form action="{% url 'check_printered' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Check for Printer</button>
+    </form>
+
+    <!-- If a printer is found, show the scan button -->
+    {% if has_printer %}
+    <form action="{% url 'scan_and_ocr' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Scan and OCR</button>
+    </form>
+    {% else %}
+    <p>No printer found. Please connect a printer.</p>
+    {% endif %}
+
+    <!-- Logout Button -->
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    
+</body>
+</html>
