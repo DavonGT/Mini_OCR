@@ -16,8 +16,11 @@ This is a Django web application that includes user registration and login funct
 - **Python 3.6+**
 - **Django 3.x+**
 - **CUPS (Common UNIX Printing System)** for printer detection
+    sudo apt-get install cups
 - **SANE (Scanner Access Now Easy)** for scanning images
+    sudo apt-get install sane sane-utils
 - **Tesseract OCR** for text extraction from scanned images
+    sudo apt-get install tesseract-ocr
 
 ### Python Packages
 You can install the required Python packages by running the following command:
